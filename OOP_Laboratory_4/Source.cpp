@@ -18,9 +18,13 @@ int main()
 	h2.input();
 	h2.print();*/
 
-	Flat f1(1, 3);
+	/*Flat f1(1, 3);
+	f1.PrintFlat();*/
 
+	char temp[20] = "Shogencukova";
 
+	House H1(temp, 6, 2);
+	H1.PrintHouse();
 
 	return 0;
 }

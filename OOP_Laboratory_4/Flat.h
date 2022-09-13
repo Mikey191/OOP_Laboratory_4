@@ -6,35 +6,43 @@ class Flat
 {
 private:
 	int FlatNumber;
-	Human* Arr;
-	int AmountPeople;
+	Human* ArrHuman;
+	int AmountHuman;
 	//static int AmountFlat;
 public:
-	Flat(int FlatNumber, int AmountPeople) :
-		FlatNumber(FlatNumber),
-		AmountPeople(AmountPeople)
-	{
-		Arr = new Human[AmountPeople];
+	Flat() :
+		FlatNumber(0),
+		ArrHuman(new Human[0]),
+		AmountHuman(0)
+	{}
 
-		for (int i = 0; i < AmountPeople; i++)
+	Flat(int FlatNumber, int AmountHuman) :
+		FlatNumber(FlatNumber),
+		AmountHuman(AmountHuman)
+	{
+		ArrHuman = new Human[AmountHuman];
+
+		for (int i = 0; i < AmountHuman; i++)
 		{
-			Arr[i].input();
+			ArrHuman[i].input();
 		}
 		//AmountFlat++;
 	}
 
 	Flat(const Flat& tempFlat) :
 		FlatNumber(tempFlat.FlatNumber),
-		Arr(new Human[tempFlat.AmountPeople + 1])
+		ArrHuman(new Human[tempFlat.AmountHuman + 1])
 	{
-		for (int i = 0; i < tempFlat.AmountPeople; i++)
+		for (int i = 0; i < tempFlat.AmountHuman; i++)
 		{
-			Arr[i] = tempFlat.Arr[i];
+			ArrHuman[i] = tempFlat.ArrHuman[i];
 		}
 		cout << "Const copy..." << endl;
 	}
 
-	~Flat() { cout << "Des..." << endl; delete[] Arr; }
+	~Flat() { cout << "des Flat..." << endl; delete[] ArrHuman; }
+	void PrintFlat();
+	void InputFlat();
 };
 
 //int Flat::AmountFlat = 0;

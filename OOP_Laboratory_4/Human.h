@@ -41,7 +41,7 @@ public:
 	}
 
 	~Human() { delete[] Name; }
-	void print() { cout << Name << endl; }
+	void print() { cout <<  Name << endl; }
 	void input() { cout << "Name: "; cin >> Name; }
 	//static void PrintAmount() { cout << "Amount all human: " << AmountHuman << endl; }
 };
